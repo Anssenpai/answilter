@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stephen Digital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+
+body{
+    background: radial-gradient(circle at top,#2a004f,#0b0015);
+    color:#fff;
+    min-height:100vh;
+}
+
+/* HEADER */
+header{
+    background:rgba(0,0,0,.6);
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+header h1{color:#cfa6ff;font-size:20px}
+.menu{font-size:26px;cursor:pointer}
+
+/* SIDEBAR */
+nav{
+    position:fixed;
+    top:0;right:-100%;
+    width:260px;
+    height:100%;
+    background:linear-gradient(180deg,#1b0033,#0b0015);
+    padding:20px;
+    transition:.3s;
+    z-index:99;
+}
+nav.active{right:0}
+nav a{
+    display:block;
+    padding:12px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+}
+
+/* CONTENT */
+.section{
+    display:none;
+    padding:20px;
+    animation:fade .3s ease;
+}
+.section.active{display:block}
+
+@keyframes fade{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:15px;
+    box-shadow:0 0 20px rgba(140,0,255,.3);
+}
+
+.card h2{color:#c084ff;margin-bottom:10px}
+
+.product-list{
+    max-height:320px;
+    overflow-y:auto;
+}
+
+.product-list p{
+    background:rgba(255,255,255,.08);
+    padding:8px;
+    border-radius:8px;
+    margin-bottom:6px;
+}
+
+.product-list::-webkit-scrollbar{width:5px}
+.product-list::-webkit-scrollbar-thumb{
+    background:#8a2be2;
+    border-radius:10px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 16px;
+    background:linear-gradient(135deg,#7b2cff,#b56cff);
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+}
+
+.footer{
+    text-align:center;
+    font-size:12px;
+    opacity:.6;
+    margin:20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1> AMBA DIGITAL</h1>
+    <div class="menu" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav id="menu">
+    <a onclick="show('dashboard')">🏠 Dashboard</a>
+    <a onclick="show('product')">🛒 Product</a>
+    <a onclick="show('service')">📩 Layanan</a>
+</nav>
+
+<!-- DASHBOARD -->
+<<div id="dashboard" class="section active">
+    <div class="card">
+        <h2>Dashboard</h2>
+
+        <p>
+            Hello, welcome to our service website. <br>
+            This website is currently under development. <br>
+            Please choose the product you need. <br>
+            We guarantee fast response, secure service, and trusted transactions.
+        </p>
+
+        <br>
+
+        <p><b>Date:</b> <span id="date"></span></p>
+        <p><b>Time:</b> <span id="time"></span></p>
+        <p><b>Email:</b> xeondecamora@gmail.com</p>
+        <p><b>WhatsApp:</b></p>
+
+        <a class="btn" href="https://wa.me/+584160888848" target="_blank">
+            Chat Admin on WhatsApp
+        </a>
+
+        <br><br>
+        <p style="opacity:0.7;font-size:13px;">
+            © Stephen — All Rights Reserved
+        </p>
+    </div>
+</div>
+    </div>
+</div>
+
+<!-- PRODUCT -->
+<div id="product" class="section">
+    <div class="card">
+        <h2>🌍 Virtual Number</h2>
+        <div class="product-list">
+            <p>🇮🇩 Indonesia — Rp 8.000</p>
+            <p>🇹🇭 Thailand — Rp 6.000</p>
+            <p>🇦🇱 Albania — Rp 7.000</p>
+            <p>🇧🇹 Bhutan — Rp 5.000</p>
+            <p>🇳🇮 Nicaragua — Rp 7.000</p>
+            <p>🇨🇮 Ivory Coast — Rp 4.000</p>
+            <p>🇿🇼 Zimbabwe — Rp 7.000</p>
+            <p>🇲🇾 Malaysia — Rp 7.000</p>
+            <p>🇺🇿 Uzbekistan — Rp 7.000</p>
+            <p>🇻🇳 Vietnam — Rp 8.000</p>
+            <p>🇻🇪 Venezuela — Rp 5.000</p>
+            <p>🇳🇬 Nigeria — Rp 8.000</p>
+            <p>🇨🇦 Canada — Rp 9.000</p>
+            <p>🇯🇵 Japan — Rp 250.000</p>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICE -->
+<div id="service" class="section">
+    <div class="card">
+        <h2>Services</h2>
+        <p>📢 Telegram Member — Rp 12.000 / 1K</p>
+        <p>🎵 TikTok Followers — Rp 30.000 / 1K</p>
+        <p>💬 Discord Member — Rp 110.000 / 1K</p>
+        <a class="btn" href="https://wa.me/+584160888848">Order Now</a>
+    </div>
+</div>
+
+<div class="footer">
+    © Stephen Digital — All Rights Reserved
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+function show(id){
+    document.querySelectorAll(".section").forEach(e=>e.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    document.getElementById("menu").classList.remove("active");
+}
+
+function updateTime(){
+    const now = new Date();
+    document.getElementById("date").innerHTML = now.toDateString();
+    document.getElementById("time").innerHTML = now.toLocaleTimeString();
+}
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+</html>Reserved
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+function show(de){
+    document.querySelectorAll(".section").forEach(e=>e.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    document.getElementById("menu").classList.remove("active");
+}
+
+function updateTime(){
+    const now = new Date();
+    document.getElementById("date").innerHTML = now.toDateString();
+    document.getElementById("time").innerHTML = now.toLocaleTimeString();
+}
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+  </html>
